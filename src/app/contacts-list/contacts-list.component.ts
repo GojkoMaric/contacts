@@ -32,8 +32,11 @@ export class ContactsListComponent implements OnInit {
         lastName:  'Hessic',
         email:     'martin@example.com'
       }
-
     ];
+  }
+
+  removeContact(contact){
+    console.log(contact);
   }
 
   ngOnInit() {
