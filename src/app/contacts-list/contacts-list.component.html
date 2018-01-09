@@ -1,4 +1,22 @@
-<ul *ngFor="let contact of contacts">
-    <li >{{contact.firstName+ ' '+ contact.lastName}}
-    <button class='btn btn-danger' (click)="removeContact(contact)">Remove</button></li>
-</ul>
+<table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Remove Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <th scope="row">1</th>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.email}}</td>
+        <td>
+            <button class='btn btn-danger' (click)="removeContact(contact)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
