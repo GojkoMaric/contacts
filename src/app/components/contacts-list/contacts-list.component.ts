@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomPipePipe } from '../../pipes/custom-pipe.pipe';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-contacts-list', //selector se uzima i stavlja u app.component pod tag <app-...>
@@ -12,30 +13,9 @@ export class ContactsListComponent implements OnInit {
   searchTerm ='';
   testModel = "test";
 
-  constructor() { 
-    this.contacts=
-    [
-      {
-        firstName: 'John',
-        lastName:  'Doe',
-        email:     'john@example.com'
-      },
-      {
-        firstName: 'Daniel',
-        lastName:  'Ros',
-        email:     'daniel@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hess',
-        email:     'martin@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hessic',
-        email:     'martin@example.com'
-      }
-    ];
+  constructor(private _contactsService: ContactsService) { 
+    this.contacts= this._contactsService.getContacts();
+
   }
 
   removeContact(contact){
