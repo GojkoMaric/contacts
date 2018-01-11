@@ -9,11 +9,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let contact of contacts">
+      <tr *ngFor="let contact of contacts | customPipe:searchTerm">
         <th scope="row">1</th>
         <td>{{contact.firstName}}</td>
         <td>{{contact.lastName}}</td>
-        <td>{{contact.email}}</td>
+        <td>{{contact.email | uppercase | lowercase }}</td>
         <td>
             <button class='btn btn-danger' (click)="removeContact(contact)">Remove</button>
         </td>
@@ -22,5 +22,5 @@
   </table>
 
 
-  <input type = "text" name="" [(ngModel)]="testModel">
+  <input type = "text" name="" [(ngModel)]="searchTerm">
   <div>Input value: {{testModel}} </div>

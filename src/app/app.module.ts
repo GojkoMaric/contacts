@@ -10,6 +10,7 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 
 
 const appRoutes: Routes = [
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     ContactsListComponent,
     LayoutComponent,
     NavBarComponent,
-    MessagesComponent
+    MessagesComponent,
+    CustomPipePipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomPipePipe } from '../../pipes/custom-pipe.pipe';
 
 @Component({
   selector: 'app-contacts-list', //selector se uzima i stavlja u app.component pod tag <app-...>
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactsListComponent implements OnInit {
 
   contacts;
+  searchTerm ='';
   testModel = "test";
 
   constructor() { 
